@@ -23,53 +23,76 @@ The designs were created to the following widths:
 
 - Family: [Outfit](https://fonts.google.com/specimen/Outfit)
 - Weights: 400, 700 */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightGray: hsl(212, 45%, 89%);
+  --grayishBlue: hsl(220, 15%, 55%);
+  --darkBlue: hsl(218, 44%, 22%);
+}
+
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
 body {
+  background-color: var(--lightGray);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+button {
   font-family: "Outfit", sans-serif;
-  background-color: hsl(212, 45%, 89%);
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 97vh;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--white);
   padding: 1em;
   text-align: center;
   width: 350px;
   border-radius: 5%;
 }
 
-img {
+.card img {
   border-radius: 3%;
   width: 320px;
 }
 
-h2 {
-  margin-top: 1em;
-  padding: 0 10px;
-  font-size: 1.5em;
-  font-weight: 700;
-  color: hsl(218, 44%, 22%);
+.card-title {
+  padding: 0 20px;
 }
 
-p {
-  padding: 0 10px;
-  margin: 1em 0;
+.card-title h2 {
+  margin-top: 1em;
+  font-weight: 700;
+  color: var(--darkBlue);
+}
+
+.card-title p {
+  margin: 1em auto;
   font-size: 15px;
-  color: hsl(220, 15%, 55%);
+  color: var(--grayishBlue);
 }
 
 .attribution {
+  position: fixed;
+  bottom: 10px;
   font-size: 11px;
   text-align: center;
 }
